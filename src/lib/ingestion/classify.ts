@@ -38,12 +38,31 @@ const BLACKLIST: RegExp[] = [
   /(暗号資産|仮想通貨|ビットコイン|NFT)/,
   /(株価|決算|IPO)/,
   /(プロンプト\s*エンジニ|生成AI(?:が|を|の)使い方|ChatGPT\s*(?:の|で)\s*(?:使い方|プロンプト))/,
+
+  // Pure software / SaaS / cloud — not a hard gadget
+  /(クラウドストレージ|オンラインストレージ|pCloud|Dropbox|Google\s*Drive)/,
+  /(進捗管理|タスク管理|プロジェクト管理|スケジュール管理|TODO\s*アプリ).*アプリ/,
+  /(ビデオ通話|ミーティング)アプリ/,
+  /(.+アプリ.*(?:話題|配信開始|リリース))/,
+  // Cashless / payment campaign noise (not a hardware story)
+  /(キャッシュレス|決済.*まとめ|ポイント還元.*まとめ|キャンペーンまとめ)/,
+  /(Suica|PayPay|楽天ペイ).*(?:キャンペーン|まとめ|還元)/,
+  // Data breach / leak
+  /(個人情報|ユーザー情報).*漏えい/,
+  /情報漏(?:え|洩)/,
+  // Medical / science news (often false-positives appliance/sensor rules)
+  /(アルツハイマー|認知症|腫瘍|ワクチン|抗体|血液型)/,
+  /(マウス|ラット).*症状/,
+  /脳(?:内|の|波).*?(?:研究|治療|疾患|症状|機能)/,
+  // Generic shopping campaign noise (not a product story)
+  /(爆買|スーパーSALE|ウルトラSALE).*開催/,
+  /ショッピング.*(?:SALE|セール).*開催/,
 ];
 
 const HARD_GADGET: RegExp[] = [
   /\b(smartphone|phone|android|iphone|foldable)\b/i,
   /\b(power\s*bank|portable\s*charger|gan(\s|-)?charger|charger|charging|usb-?c|magsafe|qi2)\b/i,
-  /\b(washer|dryer|refrigerator|fridge|microwave|oven|air\s*purifier|vacuum|robot\s*vacuum|aircon|hvac)\b/i,
+  /\b(washer|dryer|refrigerator|fridge|microwave|oven|air\s*purifier|vacuum|robot\s*vacuum|aircon|hvac|hair\s*dryer|shaver|trimmer|fan|humidifier|projector|router)\b/i,
   /\b(smartwatch|wearable|fitness\s*tracker|smart\s*ring|earbud|headphone|earphone|speaker)\b/i,
   /\b(e-?bike|electric\s*bike|scooter|micro-?mobility)\b/i,
   /\b(tablet|ipad|kindle|e-?reader)\b/i,
@@ -53,7 +72,7 @@ const HARD_GADGET: RegExp[] = [
   /\b(case|stand|cable|mount|tripod)\b/i,
   /(スマートフォン|スマホ|iPhone|Android|Galaxy|Pixel|Xperia|AQUOS|折りたたみ|フォルダブル)/,
   /(充電器|充電|モバイルバッテリー|ポータブル電源|USB-?C|MagSafe|Qi2?|ワイヤレス充電|GaN|急速充電)/,
-  /(冷蔵庫|洗濯機|電子レンジ|オーブン|空気清浄機|掃除機|ロボット掃除機|エアコン|家電|炊飯器|テレビ)/,
+  /(冷蔵庫|洗濯機|電子レンジ|オーブン|空気清浄機|掃除機|ロボット掃除機|エアコン|家電|炊飯器|テレビ|ドライヤー|ヘアドライヤー|シェーバー|電動シェーバー|ヘアアイロン|加湿器|除湿器|扇風機|サーキュレーター|電気ケトル|電動歯ブラシ|美容家電|美顔器|プロジェクター|ホームシアター|ルーター|Wi-?Fi)/,
   /(スマートウォッチ|Apple\s*Watch|Galaxy\s*Watch|Fitbit|ウェアラブル|フィットネス|スマートリング)/,
   /(電動自転車|電動アシスト|e-?bike|電動キックボード|電動スクーター|モビリティ)/,
   /(イヤホン|ヘッドホン|イヤフォン|スピーカー|オーディオ|完全ワイヤレス|Buds)/,
@@ -103,12 +122,18 @@ const RULES: Rule[] = [
   { match: /お掃除ロボ/,                                           cat: "robotics",   tags: ["robot-vacuum"], boost: 6 },
 
   // ============================================================
-  // 3. Home appliances
+  // 3. Home appliances (broad — beauty / climate / kitchen included)
   // ============================================================
-  { match: /\b(washer|dryer|refrigerator|fridge|microwave|oven|air\s*purifier|vacuum|aircon|dishwasher)\b/i,
+  { match: /\b(washer|dryer|refrigerator|fridge|microwave|oven|air\s*purifier|vacuum|aircon|dishwasher|hair\s*dryer|shaver|trimmer|humidifier|fan)\b/i,
                                                                   cat: "appliances", boost: 5 },
-  { match: /(冷蔵庫|洗濯機|電子レンジ|オーブン|空気清浄機|掃除機|エアコン|食洗機|食器洗い|炊飯器)/,
+  { match: /(冷蔵庫|洗濯機|電子レンジ|オーブン|空気清浄機|掃除機|エアコン|食洗機|食器洗い|炊飯器|電気ポット|電気ケトル|トースター)/,
                                                                   cat: "appliances", boost: 6 },
+  // beauty / personal care
+  { match: /(ドライヤー|ヘアドライヤー|シェーバー|電動シェーバー|ヘアアイロン|電動歯ブラシ|美容家電|美顔器|脱毛器)/,
+                                                                  cat: "appliances", tags: [], boost: 6 },
+  // climate / fan
+  { match: /(加湿器|除湿器|扇風機|サーキュレーター|ヒーター|ストーブ|空調)/,
+                                                                  cat: "appliances", boost: 5 },
   { match: /(家電)/,                                              cat: "appliances", boost: 3 },
 
   // ============================================================
@@ -161,12 +186,13 @@ const RULES: Rule[] = [
                                                                   cat: "peripherals",boost: 3 },
 
   // ============================================================
-  // 9. Smart home
+  // 9. Smart home + networking gear
   // ============================================================
-  { match: /\b(smart\s*home|matter|thread|hue|nest|smart\s*lock|smart\s*plug)\b/i,
+  { match: /\b(smart\s*home|matter|thread|hue|nest|smart\s*lock|smart\s*plug|wi-?fi\s*\d?|mesh|router)\b/i,
                                                                   cat: "smarthome",  boost: 4 },
-  { match: /(スマートホーム|スマートロック|スマートプラグ|スマート家電|Matter)/,
+  { match: /(スマートホーム|スマートロック|スマートプラグ|スマート家電|Matter|Wi-?Fi\s*ルーター|メッシュ\s*Wi-?Fi|ルーター)/,
                                                                   cat: "smarthome",  boost: 4 },
+  { match: /(プロジェクター|ホームシアター)/,                      cat: "smarthome",  boost: 3 },
 
   // ============================================================
   // 10. Robotics (generic)
@@ -196,12 +222,27 @@ const RULES: Rule[] = [
 
 function unique<T>(arr: T[]): T[] { return Array.from(new Set(arr)); }
 
+/**
+ * Why we classify on TITLE only:
+ *
+ * Sites like Makuake include a generic boilerplate disclaimer in every
+ * project description ("使用するパソコン、スマートフォン等環境によって..."). That
+ * accidentally matched the "スマートフォン" rule and routed pet collars, wallets,
+ * insoles, and pots into the smartphone category.
+ *
+ * Titles in JP gadget media are highly descriptive — if the article is about a
+ * smartphone, the title says so. Using only the title for the category and the
+ * hard-gadget gate gives high precision; we still mine the full text for tags
+ * and keyword-boost (lower stakes).
+ */
 export function classify(input: ClassifyInput): ClassifyResult {
-  const text = `${input.title} ${input.summary ?? ""}`;
+  const title = input.title;
+  const fullText = `${input.title} ${input.summary ?? ""}`;
   const reasons: string[] = [];
 
+  // Blacklist runs on full text (catch noise wherever).
   for (const r of BLACKLIST) {
-    if (r.test(text)) {
+    if (r.test(fullText)) {
       return {
         category_slug: null,
         tags: [],
@@ -213,20 +254,34 @@ export function classify(input: ClassifyInput): ClassifyResult {
     }
   }
 
-  const isHard = HARD_GADGET.some((r) => r.test(text));
-  if (!isHard) reasons.push("not_hard_gadget");
+  // Hard-gadget gate uses TITLE only — keyword in boilerplate ≠ hard gadget.
+  const isHard = HARD_GADGET.some((r) => r.test(title));
+  if (!isHard) reasons.push("not_hard_gadget_title");
 
+  // Category from TITLE — first match wins.
   let category: string | null = null;
   const tags = new Set<string>();
   let boost = 0;
+
   for (const rule of RULES) {
-    if (rule.match.test(text)) {
+    if (rule.match.test(title)) {
       if (!category && rule.cat) {
         category = rule.cat;
         reasons.push(`cat:${rule.cat}`);
       }
       rule.tags?.forEach((t) => tags.add(t));
       boost += rule.boost ?? 0;
+    }
+  }
+
+  // Secondary pass over the summary contributes tags and a softened boost,
+  // but never changes the category (avoids the boilerplate problem).
+  if (input.summary) {
+    for (const rule of RULES) {
+      if (rule.match.test(input.summary)) {
+        rule.tags?.forEach((t) => tags.add(t));
+        boost += Math.round((rule.boost ?? 0) * 0.35);
+      }
     }
   }
 
