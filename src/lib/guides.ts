@@ -4,6 +4,23 @@ import matter from "gray-matter";
 
 export type GuideFaq = { q: string; a: string };
 
+export type GuidePhone = {
+  name: string;
+  brand: "apple" | "samsung" | "google" | "sony" | "xiaomi" | "oneplus" | "nothing" | string;
+  color: string;   // hex body color
+  accent: string;  // hex accent (screen / highlight)
+  tagline: string;
+  bestFor: string;
+  price?: string;
+};
+
+export type GuideUseCase = {
+  icon: "camera" | "gaming" | "battery" | "ai" | "compact" | "cost" | "foldable" | string;
+  label: string;
+  pick: string;
+  runner?: string;
+};
+
 export type GuideFrontmatter = {
   slug: string;
   title: string;
@@ -12,9 +29,12 @@ export type GuideFrontmatter = {
   updatedAt?: string;
   author: string;
   heroImage?: string;
+  heroVariant?: string;
   tags?: string[];
   relatedCategories?: string[];
   faqs?: GuideFaq[];
+  phones?: GuidePhone[];
+  useCases?: GuideUseCase[];
 };
 
 export type Guide = {

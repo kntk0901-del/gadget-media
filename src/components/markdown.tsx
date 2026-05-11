@@ -1,6 +1,27 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import { UseCaseIcon } from "./guide/section-icons";
+
+// Heuristic: pick a section icon from the heading text.
+function pickIcon(text: string): string | null {
+  if (/カメラ|写真/.test(text)) return "camera";
+  if (/ゲーム|発熱/.test(text)) return "gaming";
+  if (/バッテリー|充電/.test(text)) return "battery";
+  if (/AI/.test(text)) return "ai";
+  if (/コンパクト/.test(text)) return "compact";
+  if (/コスパ|価格|安/.test(text)) return "cost";
+  if (/折りたた|フォルダブル/.test(text)) return "foldable";
+  return null;
+}
+
+function flattenChildren(children: any): string {
+  if (children == null) return "";
+  if (typeof children === "string") return children;
+  if (Array.isArray(children)) return children.map(flattenChildren).join("");
+  if (typeof children === "object" && "props" in children) return flattenChildren(children.props.children);
+  return "";
+}
 
 /**
  * Markdown renderer for editorial guides. Tailwind-styled, internal-link
@@ -16,9 +37,20 @@ export function Markdown({ source }: { source: string }) {
           h1: ({ children }) => (
             <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tightish mt-14 mb-6 first:mt-0">{children}</h1>
           ),
-          h2: ({ children }) => (
-            <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tightish mt-14 mb-4 pb-2 border-b border-ink-line">{children}</h2>
-          ),
+          h2: ({ children }) => {
+            const text = flattenChildren(children);
+            const icon = pickIcon(text);
+            return (
+              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tightish mt-14 mb-4 pb-3 border-b border-ink-line flex items-center gap-3">
+                {icon ? (
+                  <span className="inline-flex items-center justify-center rounded-lg border border-accent/30 bg-accent/10 p-1.5 text-accent">
+                    <UseCaseIcon icon={icon} size={22} />
+                  </span>
+                ) : null}
+                <span>{children}</span>
+              </h2>
+            );
+          },
           h3: ({ children }) => (
             <h3 className="font-display text-xl font-semibold tracking-tightish mt-10 mb-3">{children}</h3>
           ),

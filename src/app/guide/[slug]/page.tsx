@@ -4,10 +4,13 @@ import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { Markdown } from "@/components/markdown";
-import { Badge, Pill } from "@/components/ui/primitives";
+import { Pill } from "@/components/ui/primitives";
 import { getAllGuides, getGuideBySlug } from "@/lib/guides";
 import { getByCategory } from "@/lib/queries";
 import { ArticleCard } from "@/components/article-card";
+import { GuideHero } from "@/components/guide/hero";
+import { PhoneShowcase } from "@/components/guide/phone-showcase";
+import { UseCaseMatrix, VerdictBox } from "@/components/guide/use-case-matrix";
 
 export const revalidate = 3600;
 export const dynamicParams = false;
@@ -114,32 +117,48 @@ export default async function GuidePage({ params }: { params: { slug: string } }
           <span className="text-ink line-clamp-1">{frontmatter.title}</span>
         </nav>
 
-        {/* Header */}
-        <header className="mb-10">
-          <Badge tone="accent">GUIDE · {frontmatter.publishedAt}</Badge>
-          <h1 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.18] tracking-tightish">
-            {frontmatter.title}
-          </h1>
-          <p className="mt-4 text-base text-ink-soft leading-relaxed">{frontmatter.description}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-[12px] text-ink-muted">
-            <span>{frontmatter.author}</span>
-            <span>·</span>
-            <span>更新 {frontmatter.updatedAt || frontmatter.publishedAt}</span>
-            {frontmatter.tags && frontmatter.tags.length > 0 && (
-              <>
-                <span>·</span>
-                <div className="flex flex-wrap gap-1">
-                  {frontmatter.tags.map((t) => (
-                    <Pill key={t}>{t}</Pill>
-                  ))}
-                </div>
-              </>
-            )}
-          </div>
-        </header>
+        {/* HERO — large editorial banner with phone silhouettes */}
+        <GuideHero
+          title={frontmatter.title}
+          subtitle={frontmatter.description}
+          date={frontmatter.publishedAt}
+          phones={frontmatter.phones}
+        />
+
+        <div className="flex flex-wrap items-center gap-2 text-[12px] text-ink-muted">
+          <span>{frontmatter.author}</span>
+          <span>·</span>
+          <span>更新 {frontmatter.updatedAt || frontmatter.publishedAt}</span>
+          {frontmatter.tags && frontmatter.tags.length > 0 && (
+            <>
+              <span>·</span>
+              <div className="flex flex-wrap gap-1">
+                {frontmatter.tags.map((t) => (
+                  <Pill key={t}>{t}</Pill>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Visual lineup */}
+        {frontmatter.phones && frontmatter.phones.length > 0 && (
+          <PhoneShowcase phones={frontmatter.phones} />
+        )}
+
+        {/* Use-case matrix */}
+        {frontmatter.useCases && frontmatter.useCases.length > 0 && (
+          <UseCaseMatrix items={frontmatter.useCases} />
+        )}
 
         {/* Body */}
         <Markdown source={body} />
+
+        {/* Final editorial verdict */}
+        <VerdictBox
+          phone="Pixel 10（¥139,800）"
+          reason="性能・価格・サポート年数（7 年 OS アップデート）のバランスで、2026 年の現実解。カメラに妥協できないなら Pixel 10 Pro、Android 全部入りなら Galaxy S26 Ultra、iPhone エコシステム重視なら iPhone 17 Pro へ。"
+        />
 
         {/* FAQ (rendered visually too, in addition to JSON-LD) */}
         {frontmatter.faqs && frontmatter.faqs.length > 0 && (
