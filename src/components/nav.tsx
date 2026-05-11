@@ -6,6 +6,7 @@ const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "GADGET//WIRE";
 const NAV = [
   { href: "/latest",              label: "最新" },
   { href: "/featured",            label: "ピックアップ" },
+  { href: "/guide",               label: "選び方" },
   { href: "/category/smartphones", label: "スマホ" },
   { href: "/category/charging",   label: "周辺機器" },
   { href: "/category/appliances", label: "家電" },

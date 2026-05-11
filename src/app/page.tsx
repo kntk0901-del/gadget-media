@@ -7,6 +7,7 @@ import { Badge, SectionHeader } from "@/components/ui/primitives";
 import {
   getCategories, getFeaturedArticles, getLatestArticles, getTopArticles, getByCategory,
 } from "@/lib/queries";
+import { getAllGuides } from "@/lib/guides";
 
 export const revalidate = 600;
 
@@ -40,10 +41,31 @@ export default async function HomePage() {
   const lead = pickPool[0];
   const subPicks = pickPool.slice(1, 9); // 8 picks below the lead (2 rows × 4)
 
+  const latestGuide = getAllGuides()[0]; // featured editorial guide
+
   return (
     <>
       <Nav />
       <main className="mx-auto max-w-screen-2xl px-4 py-6 lg:px-8 bg-grid">
+        {/* FEATURED GUIDE — long-form editorial promo, top of homepage for SEO + internal nav */}
+        {latestGuide && (
+          <Link
+            href={`/guide/${latestGuide.frontmatter.slug}`}
+            className="group mb-8 flex flex-col gap-3 rounded-2xl border border-accent/30 bg-gradient-to-br from-accent/10 via-bg-soft to-bg p-6 transition hover:border-accent/60 lg:flex-row lg:items-center lg:gap-8"
+          >
+            <div className="shrink-0">
+              <Badge tone="accent">編集部ガイド</Badge>
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="font-display text-xl md:text-2xl font-semibold leading-snug tracking-tightish text-ink group-hover:text-accent">
+                {latestGuide.frontmatter.title}
+              </div>
+              <p className="mt-1 text-sm text-ink-soft line-clamp-2">{latestGuide.frontmatter.description}</p>
+            </div>
+            <div className="shrink-0 text-sm text-accent group-hover:translate-x-1 transition">読む →</div>
+          </Link>
+        )}
+
         {/* TODAY'S PICKS (lead + 8 subs, merged hero) */}
         <section className="mb-14">
           <div className="mb-4 flex items-center gap-3">
