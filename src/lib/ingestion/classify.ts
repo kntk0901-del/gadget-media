@@ -113,6 +113,8 @@ const RULES: Rule[] = [
   { match: /\b(case|stand|cable|mount|tripod|grip|holder)\b/i,    cat: "charging",   boost: 2 },
   { match: /(ケース|スタンド|ケーブル|マウント|三脚|スマホグリップ|ホルダー|スマホスタンド)/,
                                                                   cat: "charging",   boost: 2 },
+  // "Board / plate" products marketed as iPhone/iPad stands ("魔法の板"系)
+  { match: /(魔法の板|.*の板.*(?:iPhone|iPad|スマホ|タブレット))/, cat: "charging",   boost: 3 },
 
   // ============================================================
   // 2. Robotics (specific) — must beat the generic vacuum rule
@@ -153,24 +155,36 @@ const RULES: Rule[] = [
   { match: /(電動キックボード|電動スクーター)/,                    cat: "ebikes",     boost: 6 },
 
   // ============================================================
-  // 6. Smartphones — model/brand specific (after accessory rules!)
+  // 6. Smartphones — STRICT: require an actual model designator (number,
+  //    SE/Pro/Air/Max etc.) so that titles like "iPhone使い方" or
+  //    "iPhoneのリマインダー" don't land here. Generic "スマホ" articles
+  //    with no model context fall through to "その他ガジェット".
   // ============================================================
-  { match: /\b(iphone\s*\d+|iphone\s*pro|iphone)\b/i,             cat: "smartphones", tags: ["iphone", "apple"], boost: 6 },
-  { match: /iPhone/,                                              cat: "smartphones", tags: ["iphone", "apple"], boost: 6 },
+  // Pre-filter: app / how-to / data-mgmt content mentioning a phone but
+  // really about software usage. Must come BEFORE the iPhone/Pixel rules.
+  { match: /(タスク管理|リマインダー|スケジュール管理|純正アプリ|.*アプリ.*使い方|.*アプリの|.*アプリで)/,
+                                                                  cat: "other",      boost: 0 },
+  { match: /(HEIC形式|画像エラー|アップロード.*エラー|.*容量制限|.*保存方法|データ移行のやり方)/,
+                                                                  cat: "other",      boost: 0 },
+
+  // iPhone with a real model number / suffix
+  { match: /iPhone\s*(?:\d|SE|Pro|Air|Plus|Max|mini)/i,           cat: "smartphones", tags: ["iphone", "apple"], boost: 6 },
+  // iPhone in a switching / lineup / launch context (no model needed)
+  { match: /(iPhone|アイフォン).*(?:発表|発売|新型|新機種|レビュー|登場|乗り換え|買い替え|ランキング|やめて|乗り換える)/,
+                                                                  cat: "smartphones", tags: ["iphone", "apple"], boost: 5 },
+
+  { match: /Galaxy\s*(?:S|Z|Note|A|M|Fold|Flip)\s*\d?/,           cat: "smartphones", tags: ["samsung", "android"], boost: 6 },
   { match: /\bgalaxy\s*(s|z|note|fold|flip)/i,                    cat: "smartphones", tags: ["samsung", "android"], boost: 6 },
-  { match: /Galaxy\s*(S|Z|Note|Fold|Flip)/,                       cat: "smartphones", tags: ["samsung", "android"], boost: 6 },
-  { match: /\bpixel\s*\d/i,                                       cat: "smartphones", tags: ["google", "android"], boost: 5 },
   { match: /Pixel\s*\d/,                                          cat: "smartphones", tags: ["google", "android"], boost: 5 },
-  { match: /(Xperia|AQUOS|arrows|Rakuten\s*Hand)/,                cat: "smartphones", tags: ["android"], boost: 5 },
-  { match: /(折りたたみスマ|フォルダブル|foldable\s*phone|fold\s*phone|flip\s*phone)/i,
+  { match: /\bpixel\s*\d/i,                                       cat: "smartphones", tags: ["google", "android"], boost: 5 },
+  { match: /(Xperia|AQUOS|arrows|Rakuten\s*Hand)\s*[\d\w]?/,      cat: "smartphones", tags: ["android"], boost: 5 },
+  { match: /(折りたたみスマホ|フォルダブル\s*スマ|foldable\s*phone|fold\s*phone|flip\s*phone)/i,
                                                                   cat: "smartphones", tags: ["foldable"], boost: 4 },
   { match: /\b(xiaomi|oneplus|nothing|vivo|oppo|honor)\s*\d/i,    cat: "smartphones", tags: ["android"], boost: 3 },
   { match: /(Xiaomi|OPPO|vivo|OnePlus|Nothing|Honor|Huawei)\s*\d/,cat: "smartphones", tags: ["android"], boost: 3 },
-  { match: /(スマートフォン)/,                                     cat: "smartphones", boost: 3 },
-  // generic スマホ — lowest signal so charger-for-smartphone articles
-  // don't end up here.
-  { match: /スマホ(?!.*(?:充電|バッテリー|イヤホン|ヘッドホン|スタンド|ケース|ケーブル|スピーカー))/,
-                                                                  cat: "smartphones", boost: 2 },
+  // generic — only when accompanied by a launch / review / model context
+  { match: /(スマートフォン|スマホ).*(?:発表|発売|新型|新機種|レビュー|登場|本体|ランキング)/,
+                                                                  cat: "smartphones", boost: 3 },
 
   // ============================================================
   // 7. Tablets

@@ -4,7 +4,6 @@ import { Badge } from "./ui/primitives";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "GADGET//WIRE";
 
 const NAV = [
-  { href: "/",                    label: "今日" },
   { href: "/latest",              label: "最新" },
   { href: "/featured",            label: "ピックアップ" },
   { href: "/category/smartphones", label: "スマホ" },
