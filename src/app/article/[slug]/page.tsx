@@ -7,6 +7,7 @@ import { ArticleCard } from "@/components/article-card";
 import { Badge, Hr, Pill, SectionHeader } from "@/components/ui/primitives";
 import { getArticleBySlug, getRelatedArticles, getSameSourceArticles } from "@/lib/queries";
 import { createSupabaseServer } from "@/lib/supabase/server";
+import { getGuidesForCategory } from "@/lib/guides";
 import { timeAgo } from "@/lib/utils";
 
 export const revalidate = 900;
@@ -38,6 +39,10 @@ export default async function ArticleDetail({ params }: { params: { slug: string
       return (data ?? []).map((r: any) => r.tags).filter(Boolean);
     })(),
   ]);
+
+  // Editorial guide that matches this article's category — internal-link CTA
+  const matchingGuides = a.category_slug ? getGuidesForCategory(a.category_slug) : [];
+  const featuredGuide = matchingGuides[0];
 
   return (
     <>
@@ -124,6 +129,22 @@ export default async function ArticleDetail({ params }: { params: { slug: string
           </div>
 
           <aside className="space-y-10">
+            {featuredGuide ? (
+              <Link
+                href={`/guide/${featuredGuide.frontmatter.slug}`}
+                className="group block rounded-xl border border-accent/40 bg-gradient-to-br from-accent/15 via-bg-soft to-bg p-5 transition hover:border-accent/70"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mb-2">
+                  編集部ガイド · あわせて読みたい
+                </div>
+                <div className="font-display text-base font-semibold leading-snug tracking-tightish text-ink group-hover:text-accent line-clamp-3">
+                  {featuredGuide.frontmatter.title}
+                </div>
+                <p className="mt-2 text-xs text-ink-soft line-clamp-3">{featuredGuide.frontmatter.description}</p>
+                <div className="mt-3 text-xs text-accent">読む →</div>
+              </Link>
+            ) : null}
+
             <div>
               <SectionHeader tag="RELATED" title="同じカテゴリ" />
               <div className="grid gap-3">

@@ -48,3 +48,10 @@ export function getAllGuides(): Guide[] {
 export function getGuideBySlug(slug: string): Guide | null {
   return readGuideFile(slug);
 }
+
+/** Guides that declare `relatedCategories` containing the given category slug. */
+export function getGuidesForCategory(categorySlug: string): Guide[] {
+  return getAllGuides().filter((g) =>
+    (g.frontmatter.relatedCategories ?? []).includes(categorySlug)
+  );
+}

@@ -34,7 +34,9 @@ export function Footer() {
           <ul className="space-y-1.5 text-sm">
             <li><Link href="/latest" className="text-ink-soft hover:text-ink">最新記事</Link></li>
             <li><Link href="/featured" className="text-ink-soft hover:text-ink">今日のピックアップ</Link></li>
+            <li><Link href="/guide" className="text-ink-soft hover:text-ink">選び方ガイド</Link></li>
             <li><Link href="/search" className="text-ink-soft hover:text-ink">検索</Link></li>
+            <li><a href="/feed.xml" className="text-ink-soft hover:text-ink">RSS</a></li>
           </ul>
         </div>
         <div>
