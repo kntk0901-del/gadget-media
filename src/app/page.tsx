@@ -9,7 +9,7 @@ import {
 } from "@/lib/queries";
 import { getAllGuides } from "@/lib/guides";
 
-export const revalidate = 600;
+export const revalidate = 60;
 
 export default async function HomePage() {
   const [cats, featured, top, latest] = await Promise.all([

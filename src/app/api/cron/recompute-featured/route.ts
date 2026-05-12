@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { recomputeFeatured } from "@/lib/ingestion/pipeline";
 
 export const dynamic = "force-dynamic";
@@ -10,5 +11,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
   const n = await recomputeFeatured(5);
-  return NextResponse.json({ ok: true, featured: n });
+  for (const p of ["/", "/featured"]) revalidatePath(p);
+  return NextResponse.json({ ok: true, featured: n, revalidated: true });
 }

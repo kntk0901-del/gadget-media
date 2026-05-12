@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { runIngest, recomputeFeatured } from "@/lib/ingestion/pipeline";
 
 export const dynamic = "force-dynamic";
@@ -21,7 +22,8 @@ export async function POST(req: NextRequest) {
   try {
     const summary = await runIngest("manual");
     const featuredCount = await recomputeFeatured(5);
-    return NextResponse.json({ ok: true, summary, featured: featuredCount });
+    for (const p of ["/", "/featured", "/latest"]) revalidatePath(p);
+    return NextResponse.json({ ok: true, summary, featured: featuredCount, revalidated: true });
   } catch (e: any) {
     return NextResponse.json({ error: String(e?.message ?? e) }, { status: 500 });
   }
