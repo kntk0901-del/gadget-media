@@ -7,11 +7,12 @@ export type GuideFaq = { q: string; a: string };
 export type GuidePhone = {
   name: string;
   brand: "apple" | "samsung" | "google" | "sony" | "xiaomi" | "oneplus" | "nothing" | string;
-  color: string;   // hex body color
-  accent: string;  // hex accent (screen / highlight)
+  color: string;   // hex body color (SVG fallback)
+  accent: string;  // hex accent (SVG fallback)
   tagline: string;
   bestFor: string;
   price?: string;
+  photo?: string;  // remote image URL (Unsplash / press kit / CDN)
 };
 
 export type GuideUseCase = {

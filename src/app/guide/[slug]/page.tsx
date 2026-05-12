@@ -117,12 +117,13 @@ export default async function GuidePage({ params }: { params: { slug: string } }
           <span className="text-ink line-clamp-1">{frontmatter.title}</span>
         </nav>
 
-        {/* HERO — large editorial banner with phone silhouettes */}
+        {/* HERO — large editorial banner with real photo background */}
         <GuideHero
           title={frontmatter.title}
           subtitle={frontmatter.description}
           date={frontmatter.publishedAt}
           phones={frontmatter.phones}
+          heroImage={frontmatter.heroImage}
         />
 
         <div className="flex flex-wrap items-center gap-2 text-[12px] text-ink-muted">

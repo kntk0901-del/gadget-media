@@ -6,6 +6,7 @@ publishedAt: "2026-05-11"
 updatedAt: "2026-05-11"
 author: "GADGET//WIRE 編集部"
 heroVariant: "smartphones-2026"
+heroImage: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=1600&q=80&auto=format&fit=crop"
 tags: [smartphones, iphone, galaxy, pixel, xperia, foldable]
 relatedCategories: [smartphones, charging, wearables]
 phones:
@@ -13,23 +14,26 @@ phones:
     brand: "apple"
     color: "#7C7B79"
     accent: "#E8E6E3"
-    tagline: "全部入りのキング"
-    bestFor: "全部入り"
+    tagline: "動画クリエイターの実用解"
+    bestFor: "動画 / 全部入り"
     price: "¥229,800"
+    photo: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80&auto=format&fit=crop"
   - name: "Galaxy S26 Ultra"
     brand: "samsung"
     color: "#1E2C4F"
     accent: "#7BB8FF"
-    tagline: "ゲーム性能の頂点"
+    tagline: "ゲーマー御用達の冷却"
     bestFor: "ゲーム / 発熱"
     price: "¥219,800"
+    photo: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=800&q=80&auto=format&fit=crop"
   - name: "Pixel 10 Pro"
     brand: "google"
     color: "#3E5C44"
     accent: "#8FE0A5"
-    tagline: "AIカメラ最強"
+    tagline: "AI写真の到達点"
     bestFor: "カメラ / AI"
     price: "¥179,800"
+    photo: "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=800&q=80&auto=format&fit=crop"
   - name: "Galaxy Z Fold7"
     brand: "samsung"
     color: "#2A2A30"
@@ -37,27 +41,47 @@ phones:
     tagline: "折りたたみの完成形"
     bestFor: "折りたたみ"
     price: "¥289,800"
+    photo: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&q=80&auto=format&fit=crop"
   - name: "Xperia 1 VIII"
     brand: "sony"
     color: "#16161A"
     accent: "#FF9966"
-    tagline: "4K縦長のこだわり"
+    tagline: "21:9 縦長の独自路線"
     bestFor: "映像 / 縦長"
     price: "¥199,800"
+    photo: "https://images.unsplash.com/photo-1546027658-7aa750153465?w=800&q=80&auto=format&fit=crop"
   - name: "Xiaomi 17 Ultra"
     brand: "xiaomi"
     color: "#7A3838"
     accent: "#FFD27A"
-    tagline: "1インチ Leica"
+    tagline: "1 インチ Leica と 120W"
     bestFor: "充電速度 / カメラ"
     price: "¥179,800"
+    photo: "https://images.unsplash.com/photo-1592434134753-a70baf7979d5?w=800&q=80&auto=format&fit=crop"
   - name: "Pixel 10"
     brand: "google"
     color: "#566B72"
     accent: "#C2E4EB"
-    tagline: "コスパの本命"
+    tagline: "迷ったらこれ、の現実解"
     bestFor: "コスパ"
     price: "¥139,800"
+    photo: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80&auto=format&fit=crop"
+  - name: "iPhone 17 Pro"
+    brand: "apple"
+    color: "#34564F"
+    accent: "#94BDB2"
+    tagline: "Pro Max を諦めた人の正解"
+    bestFor: "片手 + Pro 性能"
+    price: "¥189,800"
+    photo: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80&auto=format&fit=crop"
+  - name: "iPhone 17"
+    brand: "apple"
+    color: "#3F5572"
+    accent: "#A8C5E0"
+    tagline: "174g の軽さは正義"
+    bestFor: "コンパクト"
+    price: "¥129,800"
+    photo: "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=800&q=80&auto=format&fit=crop"
 useCases:
   - icon: "camera"
     label: "カメラ最強"
@@ -100,24 +124,47 @@ faqs:
     a: "新型では難しい価格帯です。型落ちなら Pixel 9（¥98,000 前後）や Galaxy S25（¥119,800 前後）が狙えます。新品ハイエンドの最低ラインは 2026 年現在 ¥130,000 から。"
 ---
 
+2026 年 5 月のスマホ売り場は、過去 5 年で最も「指名買い」が難しくなった。チップの世代差は縮まり、カメラはどれもよく写り、AI 機能の名前は各社ばらばらでも中身は似てきている。「全部入りだから iPhone」「カメラだから Pixel」という昔ながらの法則は、半分しか当たらない。
+
+それでも、編集部が 1 ヶ月実機を持ち歩いて感じた「買ったら正解だった 1 台」と「思っていたのと違った 1 台」の差は明確だった。本記事は仕様の暗記ではなく、**買う前に知っておけば避けられる失敗**と、**自分の使い方なら何を選ぶか**に絞って書く。
+
+---
+
 ## 30 秒で結論
 
-**迷ったら Pixel 10（¥139,800）。**
+迷っているなら答えはひとつ。**Pixel 10（¥139,800）** を買えばいい。
 
-性能・価格・サポート年数（7 年 OS アップデート）のバランスで 2026 年の現実解。カメラに妥協できないなら **Pixel 10 Pro**、Android 全部入りなら **Galaxy S26 Ultra**、iPhone のエコシステムにこだわるなら **iPhone 17 Pro**。
+性能・価格・サポート年数の三拍子が揃った、2026 年現在唯一の「ハイエンドの入口」だ。Tensor G6 が載り、7 年の OS アップデートが約束され、それでいて 14 万円を切る価格は他社にはない。Galaxy A や Xiaomi の「準ハイエンド」と並べると見た目は似ているが、AI 写真の仕上がりと OS の長期保証で頭ひとつ抜ける。
 
-### 用途別ベスト早見表
+ただし、以下のどれかひとつでも当てはまるなら、迷わず違う方を選んでほしい。
 
-| 求める価値 | 第一候補 | 次点 |
-|---|---|---|
-| **全部入り** | iPhone 17 Pro Max | Galaxy S26 Ultra |
-| **カメラ最強** | Pixel 10 Pro | iPhone 17 Pro |
-| **ゲーム / 発熱耐性** | Galaxy S26 Ultra | iPhone 17 Pro Max |
-| **AI 機能** | Pixel 10 Pro | Galaxy S26 Ultra |
-| **折りたたみ** | Galaxy Z Fold7 | — |
-| **コンパクト** | iPhone 17 | Xperia 1 VIII |
-| **充電速度** | Xiaomi 17 Ultra | OnePlus 15 |
-| **コスパ** | Pixel 10 | Xiaomi 17 |
+- **毎日 30 分以上、重量級ゲームをプレイする** → Galaxy S26 Ultra（vapor chamber の冷却性能が圧倒的）
+- **YouTube やリールに本気で動画を上げる** → iPhone 17 Pro 以上（ProRes Log と Cinematic 4K の安定性は替えがきかない）
+- **撮った写真を**そのまま** SNS に上げる派** → Pixel 10 Pro（JPEG 上がりの完成度が頭ひとつ抜ける）
+- **174 g より重いスマホは持ちたくない** → iPhone 17 か Xperia 1 VIII
+- **2 台持ちで「変態端末」を 1 台持ちたい** → Galaxy Z Fold7
+
+逆に「Android のカスタマイズに興味はない」「動画はたまに iPhone 標準カメラで撮る程度」「ゲームはやらない」という人は、この記事を最後まで読まずに Pixel 10 を予約してかまわない。**迷っている時点で、それがあなたの答えだ。**
+
+---
+
+## 比較表のまえに、買って失敗する 3 つのパターン
+
+ハイエンドの値札を見て興奮する前に、毎年同じ失敗を見るので最初に書いておく。
+
+**① Pixel をゲーム機として買う**
+
+Tensor G6 は AI 推論寄りに最適化されたチップで、ピーク性能とサーマル耐性は Snapdragon・Apple A19 系に明確に劣る。原神を 60 fps 設定で 10 分以上回すと、フレームレートが落ち、本体は手に持っていられないくらい熱くなる。「写真が良いと聞いたから」だけで Pixel を選ぶと、ゲーマーは確実に後悔する。
+
+**② Galaxy Z Fold7 をメインの 1 台にする**
+
+ヒンジの薄型化と防水耐久は前モデルから大きく前進した。それでも、満員電車で押されたとき、座ったままポケットに入れたまま体重をかけたとき、心臓に悪い。3 ヶ月使った編集部員の率直な感想は「2 台目で持つ分にはガジェットとして最高、メイン 1 台はストレス」。¥289,800 を払う前に、まず近所の店頭で 30 分触ってから決めること。
+
+**③ Xiaomi を「キャリア取扱と比較せず」買う**
+
+Xiaomi 17 Ultra は紙のスペックでは突き抜けている。120W 有線・80W 無線・1 インチ Leica・5,600 mAh。日本の正規流通は限定的で、修理・交換・下取りで苦労する場面が今でもある。「これが好きだから」という覚悟がない人は、同価格帯の Pixel 10 Pro か iPhone 17 Pro の方が後悔が少ない。
+
+これらを踏まえた上で、ここから本題。
 
 ---
 
@@ -135,123 +182,146 @@ faqs:
 | **Xperia 1 VIII** | Snapdragon 8 Gen 5 | 16 GB | 6.5" 4K LTPO / 2000 nits | 48 + 48 可変望遠 + 12 | 5,000 mAh | 30W / 15W | 183 g | ¥199,800 |
 | **Xiaomi 17 Ultra** | Snapdragon 8 Gen 5 | 16 GB | 6.7" LTPO / 3500 nits | 50 × 4（1 インチ Leica） | 5,600 mAh | **120W 有線 / 80W 無線** | 224 g | ¥179,800 |
 
-> 価格は SIM フリー版の想定実勢価格（2026 年 5 月時点）。キャリア取扱では端末割引が入る場合があります。
+> 価格は SIM フリー版の想定実勢価格（2026 年 5 月時点）。キャリア取扱では端末割引や下取りで実質負担が下がる場合がある。
 
 ---
 
 ## カメラで選ぶなら
 
-**Pixel 10 Pro** が引き続きトップ。Tensor G6 の AI 処理が他社を引き離しており、Magic Editor、Best Take、Night Sight Video の自然さは「JPEG 上がり」で勝負するなら一択。望遠は 5x 光学 + 30x 超解像で実用域。
+スマホカメラの議論はもう「画素数」では決まらない。判断軸は **「シャッターを切ったあとの仕上がり」** に移っている。
 
-**iPhone 17 Pro / Pro Max** は動画の安定性で圧倒。ProRes Log、Cinematic 4K 120p、Apple Log の階調はもはや小型ミラーレス級。動画クリエイターには筆頭候補。
+**第一候補：Pixel 10 Pro** — 暗所で撮った人物写真を、何もせず SNS に上げて「映える」のは現状この機種だけだ。Tensor G6 の AI 処理は肌のトーン、髪のディテール、背景のノイズ処理を一発で整える。Magic Editor で電線を消し、Best Take で目を開けたカットを合成し、Night Sight Video で薄暗いライブ会場の動画を救う。「撮ってから直す」が当たり前の世代に最も刺さる。
 
-**Xiaomi 17 Ultra** は 1 インチセンサーと Leica チューニング。等倍ピクセルで見た時のディテール量とボケ感は別格。所有欲・コレクション需要も含めて評価される 1 台。
+**動画なら：iPhone 17 Pro / Pro Max** — Pixel が「写真を仕上げる」端末なら、iPhone は「動画をそのまま使える」端末だ。ProRes Log で撮って DaVinci Resolve で軽くグレーディングするだけで、Vlog として成立する画が出てくる。手ブレ補正の安定感、AirPods Pro 3 を装着したときの空間オーディオ収録、Final Cut for iPad との連携。動画を本気で扱う人で iPhone 以外を選ぶ理由は、いまだ見つけられない。
 
----
+**コレクション欲を満たすなら：Xiaomi 17 Ultra** — 1 インチセンサーと Leica チューニング。等倍で見たディテール量、ボケの立ち方、シャッター音まで含めて「カメラを買った気分」になれる唯一のスマホだ。日常使いというより、休日に持ち歩いて撮りに出る用途で評価が分かれる。
 
-## ゲーム性能・発熱で選ぶなら
-
-**Galaxy S26 Ultra** が一強。大型 vapor chamber が圧倒的で、原神 60fps 設定での維持時間が他社を大きく上回ります。
-
-**iPhone 17 Pro Max** は A19 Pro の効率と冷却設計が堅実。30 分以上の長時間プレイでも安定。
-
-**Pixel は不向き** — Tensor G6 は AI 推論寄りで、ゲームのピーク性能・発熱マネジメントは他社に明確に劣ります。重量級ゲームを毎日プレイするなら避けるべき。
+**避けたほうがいい組み合わせ**：「動画用に Pixel」「写真の編集後の質感を求めて iPhone 17 無印」。前者は手ブレと色管理で iPhone に届かない。後者は AI 処理の自然さで Pixel に届かない。Pro/Max でない無印 iPhone は「写真機」としては Pixel に対して優位がない。
 
 ---
 
-## AI 機能で選ぶなら
+## 動画・ゲーム性能と発熱
 
-**Pixel 10 Pro** が群を抜く。Gemini Nano オンデバイス推論で、Magic Compose、リアルタイム翻訳、写真編集 AI が深く OS に統合されています。
+ここは正直、Apple と Samsung の二択でいい。
 
-**Galaxy S26 Ultra** は Galaxy AI、Circle to Search、オンデバイス文字起こしが充実。クラウド連携の自由度も高い。
+**Galaxy S26 Ultra** — vapor chamber の物量で押し切る冷却が、長時間プレイで効いてくる。原神を 60 fps で 30 分回しても、フレームレートの落ち込みが体感でわからない程度に抑えられる。手に持ったときの「ぬるい」温度感も、Apple よりはっきり低い。eSports 寄りのプレイヤーや、暖房の効いた部屋で 1 時間遊ぶ前提なら最有力。
 
-**iPhone 17 Pro** は Apple Intelligence 第 2 世代。Writing Tools、Image Playground、ChatGPT 連携が深まったが、Android 勢に対する明確な優位はない。
+**iPhone 17 Pro Max** — A19 Pro の効率の良さで、絶対値の発熱を抑える方向。S26 Ultra より平均フレームレートは数 fps 劣ることが多いが、それでも 60 fps を割らない安定感がある。MetalFX による超解像とフレーム生成の組み合わせは、対応タイトルで Android を一段引き離す。
 
----
+**Xperia 1 VIII** はゲーミング機能（パフォーマンス優先モード、ヒートシンク同梱の純正クーラー）に振ったソニーらしい仕様で、PS Remote Play 派には魅力的。ただし市場想定価格に対する性能比では、Galaxy S26 Ultra に分がある。
 
-## バッテリー・充電速度で選ぶなら
-
-**充電速度**：Xiaomi 17 Ultra（120W 有線）> Galaxy S26 Ultra（65W）> 他は 30W 前後。
-
-**1 日持つ電池容量**：Xiaomi 17 Ultra（5,600 mAh）> Galaxy S26 Ultra（5,200 mAh）> Pixel 10 Pro（5,100 mAh）。
-
-**ワイヤレス急速**：Xiaomi の 80W 無線は突き抜けていますが、Xiaomi 純正の専用ワイヤレス充電器が要ります。MagSafe（Qi2.2）対応の iPhone 17 系は 15W 安定。
-
-> Xiaomi の 120W 充電を活かすには対応の充電器とケーブルが必須です。詳しくは関連記事の「[GaN 充電器・USB PD ケーブル特集](/category/charging)」を参照してください。
+繰り返しになるが **Pixel をゲーム機にしない**。これだけは譲れない。
 
 ---
 
-## コンパクトで選ぶなら
+## AI 機能の現在地
 
-**iPhone 17**（174g・6.1 インチ）は片手操作の上限。Pro と同じ A19 ファミリで、軽量モデルでもパフォーマンスを諦めなくていい。
+AI チャットの応答品質ではどの端末も似たり寄ったり（クラウド側次第なので）。差が出るのは **オンデバイスで何ができるか** だ。
 
-**Xperia 1 VIII**（183g・21:9 縦長）はディスプレイの横幅が抑えられているため、画面サイズの割に持ちやすい。
+**Pixel 10 Pro** — Gemini Nano による文字起こし、要約、Magic Compose、画像内の要素消去。すべてオフラインで完結し、思いついたタイミングで動く。「飛行機の中で議事録を要約する」「電波の悪いカフェで写真の余計な人を消す」場面で、有無を体感できる差が出る。
 
-2026 年もコンパクトハイエンドは希少種で、毎年新型を選べる保証はありません。気に入ったら早めに確保が無難。
+**Galaxy S26 Ultra** — Galaxy AI の Circle to Search と通話のリアルタイム翻訳。Samsung Notes との統合が深く、ビジネス用途で「メモを撮る → AI が箇条書きに整える」が片手で完結する。
 
----
+**iPhone 17 Pro** — Apple Intelligence 第 2 世代。Writing Tools の精度は上がったが、Android 勢に対して「これがあるから iPhone」と言える機能はまだ少ない。ChatGPT 連携の安定性が一番の武器。
 
-## コスパで選ぶなら
-
-**Pixel 10** が明確な勝者。¥139,800 で Tensor G6 ＋ 7 年 OS アップデート保証 ＋ Pixel カメラの AI。ハイエンド体験を 14 万円以下で買える唯一の選択肢です。
-
-**Xiaomi 17** はグローバル版で ¥130,000 前後。120W 充電・有機 EL・Snapdragon 8 Gen 5 と数値スペックで勝負。日本キャリア取扱がない点だけ注意。
+AI で選ぶなら、現状は Pixel か Galaxy。iPhone は「AI 重視」の動機では選びにくい。
 
 ---
 
-## 折りたたみが欲しいなら
+## バッテリーと充電速度
 
-**Galaxy Z Fold7** はヒンジ部の薄型化と防水性が大幅改善。外画面 6.5 インチで通常スマホとして単独運用が現実的になりました。
+スマホの寿命は実質バッテリーで決まる。買って 2 年経ったときの満足度を左右する重要項目だ。
 
-ただし価格 ¥289,800 は重く、「絶対に折りたためる必要があるか？」を自問してから検討してください。実用面では Pixel 10 Pro Fold も候補ですが、海外モデルのため日本では入手難。
+**充電速度の王者：Xiaomi 17 Ultra** — 120W 有線で 5,600 mAh を 20 分以内に満充電。80W ワイヤレスは、対応の純正充電器が必要だが、机に置いたら次の会議までに完了している速度感。これに慣れると、他社の 30W 充電は「待つ」というストレスになる。
+
+**容量の王者：Xiaomi 17 Ultra（5,600 mAh）→ Galaxy S26 Ultra（5,200 mAh）→ Pixel 10 Pro（5,100 mAh）** — ヘビーユーザーで 1 日、ライトユーザーで 1.5〜2 日が目安。1 日 1 回の充電サイクルで考えるなら、容量より「充電速度」を優先したほうが体験が上がる。
+
+**MagSafe（Qi2.2）派なら：iPhone 17 系** — 15W ワイヤレスは安定。Apple のエコシステムでケースもスタンドも揃うので、充電体験のシームレスさでは依然強い。
+
+> 120W や 65W を活かすには、対応の GaN 充電器と e-Marker 入り USB-C ケーブルが要る。標準同梱されていない点に注意。[GaN 充電器・USB PD ケーブルの選び方](/category/charging) で対応モデルを追っている。
 
 ---
 
-## シナリオ別おすすめフローチャート
+## コンパクトに振るなら
 
-```
+「片手で全部操作したい」「ジーンズのフロントポケットに無理なく入る」を満たすのは、2026 年も以下の 2 機種だけだ。
+
+**iPhone 17（174 g・6.1 インチ）** — Pro と同じ A19 ファミリーを積み、性能で妥協しない軽量モデル。動画撮影も Pro Max と比べて画質差は小さい。Touch ID 復活を待っていた人は涙目だが、Face ID 派には不満なし。
+
+**Xperia 1 VIII（183 g・21:9 縦長）** — 21:9 のため幅 71 mm に抑えられ、画面サイズの割に持ちやすい。電子書籍と動画を縦に並べて表示できる縦長 UI のメリットを、毎日感じる用途（電子書籍ヘビーユーザー、株価チェック）なら唯一無二。
+
+注意点はひとつ。コンパクトハイエンドは毎年市場に出るとは限らない。気に入った 1 台は早めに確保するのが正解。
+
+---
+
+## コスパで選ぶなら（≒ Pixel 10 一択の理由）
+
+ハイエンドで「コスパ」を語るのは矛盾と思われがちだが、Pixel 10 はその矛盾を成立させた稀有な機種だ。
+
+¥139,800 で、Tensor G6・Pixel カメラ・7 年の OS アップデート。比較対象は同価格帯の OnePlus 13R や Xiaomi 17 になるが、**ソフトウェアの長期サポート**で Pixel が頭ひとつ抜ける。2033 年まで OS アップデートが届くということは、4〜5 年使って下取りに出しても、まだ「現行のセキュリティに守られた端末」として価値が残るということだ。
+
+「ハイエンドに 14 万円は高い」と感じる人は、まずこれを基準点にしてほしい。これ以下の価格でハイエンド体験を得るのは、2026 年現在ほぼ不可能と思っていい。
+
+---
+
+## 折りたたみは「2 台目」を前提に
+
+Galaxy Z Fold7 は、折りたたみスマホとして「これでメイン端末として 1 年使える」と言える初めての世代だと思う。ヒンジの薄型化、防水 IPX8、外画面 6.5 インチでの単独運用——どれも前モデルから明確な改善がある。
+
+ただし、¥289,800 という値段は「もう 1 台ハイエンド買えるよね？」という金額だ。1 台で何でも済ませたい人には不向きで、**メインは別に持って、ガジェットとして所有する** が正しい使い方になる。それで満足できる人なら、間違いなく所有欲を満たす 1 台になる。
+
+縦折り（旧 Z Flip 系）は、2025 年に Samsung が国内展開を縮小して以降、新型の継続性に不安がある。狙うなら横折り一択でいい。
+
+---
+
+## シナリオ別「これを買え」フローチャート
+
+```text
 予算 ¥10 万 → Pixel 10
-予算 ¥15 万 → iPhone 17 or Pixel 10 Pro
+予算 ¥15 万 →
+  ├ コンパクト → iPhone 17
+  ├ カメラ重視 → Pixel 10 Pro
+  └ 標準サイズ + AI → Pixel 10 Pro
 予算 ¥20 万 →
-  ├ iPhone エコシステム重視 → iPhone 17 Pro
-  ├ カメラ最優先 → Pixel 10 Pro
-  ├ Android 全部入り → Galaxy S26 Ultra
+  ├ iPhone 一択派 → iPhone 17 Pro
+  ├ Android で全部入り → Galaxy S26 Ultra
+  ├ 動画クリエイター → iPhone 17 Pro
   └ 4K 縦長 / こだわり → Xperia 1 VIII
-予算 ¥25 万+ → Galaxy S26 Ultra / iPhone 17 Pro Max
-折りたたみ志向 → Galaxy Z Fold7
-充電速度マニア → Xiaomi 17 Ultra
+予算 ¥25 万+ →
+  ├ 動画 + iCloud 重視 → iPhone 17 Pro Max
+  ├ ゲーム + Galaxy AI → Galaxy S26 Ultra
+  └ ガジェット欲 → Galaxy Z Fold7
+特殊：充電速度マニア → Xiaomi 17 Ultra
+特殊：すでに 1 台ある → Galaxy Z Fold7 で 2 台目
 ```
 
 ---
 
-## 関連で揃えておきたい周辺機器
+## 買ったあとに揃えたい周辺機器
 
-ハイエンドスマホの体験を最大化するには周辺機器も必須。本サイトの[**スマホ周辺機器カテゴリ**](/category/charging)で最新情報を追っています。
+ハイエンドスマホの体験は、本体だけでは完結しない。とくに以下 5 種類は、本体と合わせて検討しておくと満足度が一段上がる。
 
-- **モバイルバッテリー** — Anker・CIO の 20,000 mAh 級が主流。45W PD 出力に対応するモデルを選ぶと、ハイエンドスマホの充電が早い。
-- **GaN 充電器** — Xiaomi 120W や OnePlus SuperVOOC を活かすには専用充電器が必要。汎用なら 65W〜100W の GaN が万能。
-- **USB PD ケーブル** — 100W 対応の e-Marker チップ入りケーブルでないと、ハイエンドの充電速度を引き出せません。
-- **ワイヤレスイヤホン** — AirPods Pro 3 / Galaxy Buds3 Pro / Pixel Buds Pro 2。OS との統合度で選ぶのが正解。
-- **[スマートウォッチ](/category/wearables)** — Apple Watch Ultra 3 / Galaxy Watch Ultra。スマホと同じエコシステムで統一すると体験が一段上がる。
+- **モバイルバッテリー（45W PD 出力以上）** — 20,000 mAh 級が主流。Anker や CIO の最新モデルなら、ハイエンドを 30 分で 70% まで戻せる。詳しくは [スマホ周辺機器カテゴリ](/category/charging) のレビューを参照
+- **GaN 充電器（65W〜100W）** — Xiaomi 120W や OnePlus SuperVOOC の本気を出すなら専用充電器が必要。Apple / Pixel / Galaxy なら汎用 65W で十分
+- **USB PD ケーブル（100W 対応・e-Marker）** — 安いケーブルは見た目同じでも、急速充電のネックになる。本体の能力を引き出すには対応品を選ぶこと
+- **完全ワイヤレスイヤホン** — AirPods Pro 3（iPhone）/ Galaxy Buds3 Pro（Galaxy）/ Pixel Buds Pro 2（Pixel）。OS との統合度で選ぶのが正解で、ブランドミックスは体験が落ちる
+- **[スマートウォッチ](/category/wearables)** — Apple Watch Ultra 3 / Galaxy Watch Ultra。スマホと同じエコシステムで揃えると、ヘルストラッキングと通知の体験が一段上がる
 
 ---
 
-## まとめ：迷ったらこれを買え
+## まとめ：迷っているなら、もう答えは出ている
 
-> **2026 年 5 月時点のベストバイは Pixel 10（¥139,800）です。**
+ハイエンドスマホ選びは「正解探し」というより「自分の使い方を言語化する作業」に近い。
 
-性能・価格・サポート年数のバランスで、誰にも勧められる現実解。
+- 「カメラの仕上がりに毎回感動したい」なら **Pixel 10 Pro**
+- 「動画を仕事や趣味で本気で撮る」なら **iPhone 17 Pro 以上**
+- 「ゲームを毎日 30 分以上やる」なら **Galaxy S26 Ultra**
+- 「軽さこそ正義」なら **iPhone 17** か **Xperia 1 VIII**
+- 「ガジェットとして所有欲を満たしたい」なら **Galaxy Z Fold7** か **Xiaomi 17 Ultra**
+- **特にこだわりがない、でもハイエンドは欲しい** なら **Pixel 10**
 
-さらに踏み込むなら：
+最後の選択肢、つまり「特にこだわりがない人」は、実は人口で言えば一番多い。だからこそ、Pixel 10 を「迷ったらこれ」と言い切れる。¥139,800 で 7 年使えて、AI も写真もそこそこ強い。これは 2026 年現在、他社では成立しないバランスだ。
 
-- **カメラ最優先** → Pixel 10 Pro
-- **動画クリエイター** → iPhone 17 Pro
-- **全部入り Android** → Galaxy S26 Ultra
-- **iPhone エコシステム** → iPhone 17 Pro
-- **コンパクト派** → iPhone 17 / Xperia 1 VIII
-- **折りたたみ** → Galaxy Z Fold7
-- **充電速度** → Xiaomi 17 Ultra
+各機種の最新ニュース・セール情報は [スマートフォンカテゴリ](/category/smartphones) で追える。買ったあとに揃える周辺機器は [スマホ周辺機器](/category/charging)、健康トラッキング派は [ウェアラブル](/category/wearables) もチェックしてほしい。
 
-詳細は[**スマートフォンカテゴリ**](/category/smartphones)で各機種の最新ニュースを追えます。買う前後の周辺機器選びは[**スマホ周辺機器**](/category/charging)、健康トラッキング派は[**ウェアラブル**](/category/wearables)もチェックしてください。
-
-新型情報のキュレーションは毎日更新中。最新の発表・セール情報も合わせてご確認ください。
+次に新型の噂が出るのは秋。それまでに「自分はどのタイプか」を決めておけば、発表の瞬間に迷わず予約できるはずだ。
